@@ -1,0 +1,120 @@
+main {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* max-height: 450px; */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* bars */
+#one {
+    background-color: blue;
+
+}
+
+#two {
+    background-color: orange;
+}
+
+#three {
+    background-color: aqua;
+}
+
+#one,
+#two,
+#three {
+    width: 300px;
+    height: 50px;
+    margin: 10px auto;
+}
+
+/* end bars */
+
+h2,
+p {
+    text-align: center;
+    color: white;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    max-width: 200px;
+}
+
+/* 
+p {
+    max-width: 200px;
+} */
+
+section {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+/* DEFIN FOR MIN WIDTH STARTING POINT */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "main"
+        "g-one"
+        "g-two"
+        "g-three";
+}
+
+/* ASSIGN - YOU ONLY NEED TO DO THIS ONCE */
+main {
+    grid-area: main;
+}
+
+.g-one {
+    grid-area: g-one;
+}
+
+.g-two {
+    grid-area: g-two;
+}
+
+.g-three {
+    grid-area: g-three;
+}
+
+/* media queries */
+
+@media (min-width: 576px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "main main"
+            "g-one g-two"
+            "g-three .";
+    }
+
+    #one,
+    #two,
+    #three {
+        width: 300px;
+        height: 50px;
+        margin: 10px auto;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas:
+            "main main main"
+            "g-one g-two g-three";
+        height: 100vh;
+    }
+
+}
